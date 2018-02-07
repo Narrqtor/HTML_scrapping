@@ -1,7 +1,12 @@
-import urllib2
+#!/usr/local/sbin/python3
+
+import requests
 from bs4 import BeautifulSoup
 
-url_page = 'https://www.facebook.com'
-page = urllib2.urlopen(url_page)
-soup = BeautifulSoup(page, 'html.parser")
+website = requests.get("https://github.com/Narrqtor")
 
+soup = BeautifulSoup(website.content, 'html.parser')
+print(soup.find_all('p'))
+
+print([type(item) for item in list(soup.children)])
+html = list(soup.children)[3]
