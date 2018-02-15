@@ -1,5 +1,5 @@
 # HTML_scrapping
-Personnal training of HTML scrapping in Python
+Personnal training of HTML scraping in Python
 
 ## Table of contents  
 #### [Prerequisites](#prerequisites)   
