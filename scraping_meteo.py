@@ -3,6 +3,10 @@
 import requests
 from bs4 import BeautifulSoup
 
+import pandas
+
+import re 
+
 ### Download the website you want to scrap from
 
 website = requests.get("http://www.meteofrance.com/accueil")
@@ -22,18 +26,40 @@ print(date)
 
 france = soup.find(class_="tableToMap carte carte-pays007")
 forecast_items = france.find_all(class_="pictoMap")
-text = forecast_items
 
 #print(text.prettify())
 
 # Loop over the list you have and retrieve the information you are looking for.
 
+A=[]
+B=[]
+
+for stuff in forecast_items:
+	cells = stuff.find(class_="picTemps").get_text()
+	states = stuff.find(class_="temper celsiusUnit").get_text()
+	places = re.sub(r'METEO', '', cells)
+	places = re.sub(r'\s+', ' ', places)
+	A.append(places)
+	B.append(states)
+
+df=pandas.DataFrame(A,columns=['Lieux'])
+df['Températures']=B
+print(df)
+
+print('\n')
+print('\n')
+
+
 for infos in forecast_items:
-	location = infos.find(class_="picTemps")
-	units = infos.find(class_="temper celsiusUnit")
-	print(location.get_text())
-	print(units.get_text())
+	location = infos.find(class_="picTemps").get_text()
+	units = infos.find(class_="temper celsiusUnit").get_text()
+	lo = re.sub(r'METEO', '', location)
+	lo = re.sub(r'\s+', ' ', lo)
+	print(lo)
+	print("Il y fait ",units, " degrés Celsius.\n")
 
 ### ALso works with the following, but depends on the website
 
 #	print(infos.get_text())
+
+
