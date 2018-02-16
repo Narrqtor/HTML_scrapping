@@ -6,6 +6,7 @@ Personnal training of HTML scraping in Python
 #### [Install pip](#install-pip)   
 #### [Update pip](#update-pip)   
 #### [BeautifoulSoup4](#beautifoulsoup4)   
+#### [Pandas](#pandas)
 #### [Lxml parser](#lxml-parser)   
 #### [Sources](#sources)
 
@@ -36,6 +37,12 @@ sudo python setup.py install
 sudo apt-get install python-bs4
 sudo easy_install BeautifulSoup4 # (use easy_install3 for python3)
 sudo pip install BeautifulSoup4 # (use pip3 for python3)
+```
+
+## Pandas
+
+```
+sudo pip install pandas
 ```
 
 ## lxml parser
