@@ -1,4 +1,4 @@
-# HTML_scrapping
+# HTML_scraping
 Personnal training of HTML scraping in Python
 
 ## Table of contents  

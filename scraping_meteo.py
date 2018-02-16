@@ -20,16 +20,20 @@ print(date)
 
 ### Retrieve the data of the zone you want to retrieve the weather from
 
-france = soup.find(id="map-forecast")
-forecast_items = france.find_all(class_="tableToMap")
-text = forecast_items[0]
+france = soup.find(class_="tableToMap carte carte-pays007")
+forecast_items = france.find_all(class_="pictoMap")
+text = forecast_items
 
 #print(text.prettify())
 
 # Loop over the list you have and retrieve the information you are looking for.
 
-for infos in text:
-	location = text.find_all(class_="picTemps")
-	temp = text.find_all(class_="temper celsiusUnit")
-	for places, units in zip(location, temp):
-		print(places.get_text(), "il y fait ", units.get_text(), " degrés")
+for infos in forecast_items:
+	location = infos.find(class_="picTemps")
+	units = infos.find(class_="temper celsiusUnit")
+	print(location.get_text())
+	print(units.get_text())
+
+### ALso works with the following, but depends on the website
+
+#	print(infos.get_text())
