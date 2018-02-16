@@ -30,7 +30,7 @@ forecast_items = france.find_all(class_="pictoMap")
 #print(text.prettify())
 
 # You can create a data frame and put your information in it.
-# Loo pover the list you just got
+# Loop over the list you just got
 
 A=[]
 B=[]
@@ -60,6 +60,6 @@ for infos in forecast_items:
 	print(lo)
 	print("Il y fait ",units, " degrés Celsius.\n")
 
-### ALso works with the following, but depends on the website
+### Also works with the following, but depends on the website
 
 #	print(infos.get_text())
