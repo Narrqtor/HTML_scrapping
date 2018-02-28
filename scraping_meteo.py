@@ -27,7 +27,6 @@ print(date)
 france = soup.find(class_="tableToMap carte carte-pays007")
 forecast_items = france.find_all(class_="pictoMap")
 
-#print(text.prettify())
 
 # You can create a data frame and put your information in it.
 # Loop over the list you just got
@@ -41,7 +40,7 @@ for stuff in forecast_items:
 	places = re.sub(r'METEO', '', cells)
 	places = re.sub(r'\s+', ' ', places)
 	A.append(places)
-	B.append(states)
+	B.append(states+"°C")
 
 df=pandas.DataFrame(A,columns=['Lieux'])
 df['Températures']=B
@@ -58,8 +57,4 @@ for infos in forecast_items:
 	lo = re.sub(r'METEO', '', location)
 	lo = re.sub(r'\s+', ' ', lo)
 	print(lo)
-	print("Il y fait ",units, " degrés Celsius.\n")
-
-### Also works with the following, but depends on the website
-
-#	print(infos.get_text())
+	print("Il y fait",units, "degrés Celsius.\n")
