@@ -9,15 +9,7 @@ import re
 
 ### Download the website you want to scrap from
 
-readweb = input("URL WEBSITE: ")
-
 website = requests.get("http://www.meteofrance.com/accueil")
-
-website2 = requests.get(readweb)
-
-soup2 = BeautifulSoup(website2.content, 'html.parser')
-
-print(soup2.prettify())
 
 ### Parse it with BeautifulSoup
 
@@ -64,5 +56,5 @@ for infos in forecast_items:
 	units = infos.find(class_="temper celsiusUnit").get_text()
 	lo = re.sub(r'METEO', '', location)
 	lo = re.sub(r'\s+', ' ', lo)
-	print(lo)
+	print(lo[1:])
 	print("Il y fait",units, "degrés Celsius.\n")
