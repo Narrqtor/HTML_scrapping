@@ -25,4 +25,11 @@ player_infos.append(country_clean)
 for element in player_infos:
 	print(element)
 
+items = soup.find(class_="profile_item_links")
+side_items = items.find_all(class_="profile_count_link ellipsis")
+
+for stuff in side_items:
+	stuff = re.sub(r'\s+', ' ', stuff.get_text())
+	print (stuff[1:])
+
 #print(soup.prettify())
