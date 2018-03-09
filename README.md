@@ -8,6 +8,7 @@ Personnal training of HTML scraping in Python
 #### [BeautifoulSoup4](#beautifoulsoup4)   
 #### [Pandas](#pandas)
 #### [Lxml parser](#lxml-parser)   
+#### [TODO](#todo)
 #### [Sources](#sources)
 
 ## Prerequisites
@@ -51,6 +52,10 @@ sudo pip install pandas
 sudo easy_install lxml
 sudo pip install lxml
 ```
+## TODO
+
+Create functions for the existing scripts.
+Create a module that interactively asks the user for what they want to scrap from the website.
 
 ## Sources
 
